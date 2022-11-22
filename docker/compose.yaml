@@ -1,0 +1,36 @@
+services:
+  example-go-restful-api:
+    container_name: example-go-restful-api
+    build:
+      context: .
+      dockerfile: ./Dockerfile.development
+      args:
+        GO_VERSION: '1.19'
+        ALPINE_VERSION: '3.16'
+        USERNAME: 'atlchris'
+    volumes:
+      - ../:/example-go-restful-api:cached
+      - example-go-restful-api-bash-history:/commandhistory
+    command: sleep infinity
+    ports:
+      - 8080:8080
+    user: atlchris
+    depends_on:
+      - example-go-restful-postgres
+  example-go-restful-postgres:
+    container_name: example-go-restful-postgres
+    image: postgres:14-alpine3.16
+    restart: unless-stopped
+    volumes:
+      - example-go-restful-postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+
+
+volumes:
+  example-go-restful-api-bash-history:
+  example-go-restful-postgres:
