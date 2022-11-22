@@ -1,5 +1,5 @@
 # Example Go RESTful API
-This project was setup to illustrate share my standard of practice for building a fully containerized RESTful API structure built in Go. It includes things like Echo, sqlc, migrations, seeds, transformers, as well as a handful of helpful make commands which are documented below. It also features a fully containerized local development environment which you can learn more about below.
+This project was setup to illustrate share my standards of practice for building a fully containerized RESTful API structure built in Go. It includes things like Echo, sqlc, PostgreSQL, migrations, seeds, transformers, as well as a handful of helpful make commands which are documented below. It also features a fully containerized local development environment which you can learn more about below.
 
 If you have questions, feel free to reachout to me on [Twitter](https://twitter.com/ATLChris) or [Mastodon](https://mas.to/@ATLChris).
 
